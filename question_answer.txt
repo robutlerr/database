@@ -1,0 +1,8 @@
+file.seekg(40, ios::cur); // why 40?
+}
+return 0;
+}
+Note: the line in bold where file.seekg uses 40 bytes from current file position. Explain
+why it is 40?
+
+Answer: It uses forty because the file begins 5 bytes in, since it begins from the id which is 5 bytes long. From there, the firstName, lastName, and income are of sizes 15, 15, and 10 bytes which adds up to 40 bytes total. By moving the file pointer forward by 40 bytes, the pointer is adjusted properly to the beginning of the next record.
